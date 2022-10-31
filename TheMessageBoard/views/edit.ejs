@@ -1,0 +1,8 @@
+<%- include('partials/header') %>
+
+<h1>Edit Post</h1>
+<form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+    <%- include('partials/formInputs') %>
+</form>
+
+<%- include('partials/footer') %> 

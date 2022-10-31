@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<div class="card">
+    <div class="card body">
+        <h5 class="card-title"><%= post.topic %> </h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= post.name %></h6>
+        <p class="card-text"><%= post.message %><p>
+        <a href="/posts/edit/<%= post._id %>" class="card-link">Edit</a>
+    </div>
+</div>
+
+<form class="mt-4" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">Delete Post</button>
+    </div>
+</form>
+
+<%- include('partials/footer') %>
