@@ -1,0 +1,73 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+<h1 class="d-flex justify-content-evenly container text-center" id="favoritesPage">Your favorite shows!</h1>
+
+
+
+        
+    <div class="d-flex justify-content-evenly container text-center">
+        <!-- Dealing with the case of no data -->
+        <% if (data !== undefined) { %>
+            <div class="row">
+                <!-- using a forEach loop to iterate through the event data and pull that data from the api and display it in card style -->
+                <% data.forEach(el => { %>
+                    <div class="col py-2">
+                        <div class="card border-dark text-white bg-secondary mb-3" style="width: 18rem; object-fit: cover;" id="card">
+                          <img src="<%= el.image %> " class="card-img-top" alt="Card Image rock n' roll">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                <%= el.event %> 
+                                </h5>
+                                <p class="card-text text-center">
+                                <%=el.event%>
+                                    <a class="fav-link" href="<%=el.url%>">For more information or to purchase tickets</a>
+                                    <br>
+                                Date: <%=el.date %>
+                                </p>
+                                <!-- enables the user to delete the favorited event from their db and page -->
+                               <a href="/favorites/<%= el._id %> "><button class="btn-danger">Delete</button></a>     
+                        </div>
+                    </div>
+                 </div>
+             <% }) %>
+            </div>
+        <% } %>    
+    </div> 
+    <!--  -->
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-12 row mt-5 justify-content-center">
+            <div class="d-flex justify-content-evenly container text-center">
+            </div> 
+        </div>
+        </div>
+    </div>
+    <!-- enables all favorites to be displayed on same page -->
+    <div class="row mt-5 justify-content-center">
+        <!-- iframe tag is used to "render" faveVenues onto the favorites page. -->
+        <iframe src="/faveVenues" width="100%" height="900" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <div class="container">
+            </div>
+        </div> 
+        <div class="row mt-5 justify-content-center">
+            <!-- iframe tag is used to "render" faveArtist onto the favorites page. -->
+        <iframe class="favorites" width="100%" src="/faveArtist" height="600" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <div class="container">
+            </div>
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+        <div class="col-md-12 row mt-5 justify-content-center">
+
+                                <!-- style not responding, neither is inline styling -->
+                                <!-- <style>
+                                    .favorites {
+                                        max-width: 100%;
+                                    }
+                                </style> -->
+        </div>
+        </div>
+    </div>
+
+
+
+<%- include('partials/footer.ejs') %>

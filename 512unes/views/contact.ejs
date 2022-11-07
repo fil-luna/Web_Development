@@ -1,0 +1,38 @@
+<%- include('partials/header.ejs', {title: "Contact"}) %>
+<%- include('partials/navbar.ejs') %>
+<!-- <h1 class="row justify-content-center">Welcome to the contact page</h1> -->
+<div class="container">
+  <!-- next line centers the child elements -->
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-8">
+      <!-- h1 tag won't center from parent element. bootstrap class had to be used. -->
+      <h1 class="row mt-5 justify-content-center">Common Questions and Answers</h1>
+      <ul>
+        <li>
+          <!-- h4 tags don't have to be centered as it would look odd. -->
+          <h4>How did 512unes start?</h4>
+          <p>512unes, Inc. was founded on July 15, 2022, by aspiring software developers, who brought to the new platform a vision of changing the way people found local bands and music. 512unes wanted to make local bands well known enough for people to find them at their local bars or venues.</p>
+        </li>
+        <li>
+          <h4>What is the purpose of this website?</h4>
+          <p>This website is a tool for artists and venues to connect with each other. It is a place where artists and venues can find each other and share their experiences and talents. We're here to even the playing field so bands with talent can have a shot at the big stage.</p>
+        </li>
+        <li>
+          <h4>I play in a band. What can I do to get more exposure?</h4>
+          <p>You're at the right spot. As we're constantly integrating various resources to capture local data so we can put local bands in front of larger crowds, we're still working to improve the experience for both your band and your target audience. Submit your contact info below to tell us how 512unes can do better to move your band into the limelight.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Next line -->
+<div class="row mt-5 justify-content-center">
+  <div class="col-md-6">
+    <h1 class="justify-content-center">For inquiries, contact support@codebusters.com</h1>
+  <!-- Next line is used as a crutch to add space between container and the footer -->
+    <img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="300" alt="">
+    </div>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

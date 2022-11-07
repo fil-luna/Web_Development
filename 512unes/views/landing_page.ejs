@@ -1,0 +1,48 @@
+<%- include('partials/header_guest.ejs') %>
+<!--  -->
+<h1 class="text-center display-1 bg-danger">Welcome to 512unes!</h1>
+<h3 class="text-center">The best place to find live Austin Music.</h3>
+<!-- The following form enables user to sign into our webapp -->
+<div class="container">
+  <div class="row mt-1 justify-content-center"> <!-- bootstrap class centers child elements -->
+    <div class="col-md-8 row mt-5 justify-content-center">
+      <h1 class="row mt-5 justify-content-center">Login</h1>
+      <form action="/login" method="post">
+        <div class="container">
+          <!-- ensures emails are accepted -->
+          <label for="username"><b>Email</b></label>
+                    <!-- form validation -->
+                    <!-- Ensures user won't be able to sign in without their password to be entered. -->
+          <input type="text" placeholder="Enter Email" name="username" required />
+          <!-- Won't show user's password -->
+          <label for="psw"><b>Password</b></label>
+          <!-- User won't be able to sign in without their password to be entered -->
+          <input type="password" placeholder="Enter Password" name="password" required />
+          <button class="btn-success" type="submit">Login</button>
+          <label id="remember">
+            <input
+              id="remember"
+              type="checkbox"
+              checked="checked"
+              name="remember"
+              style="margin-bottom: 15px"
+            />
+            Remember me
+          </label> <br> <br>
+          <!-- next line directs user to the signup page -->
+          <a href="/signup"><small>Don't have an account? Click here to register.</small></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Next 3 lines are used as a crutch to add space between th elogin form and footer -->
+<img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="100vh" alt="">
+<img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="600" alt="">
+<img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="600" alt="">
+<!-- <div class="container landing_btns">
+  <a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a>
+  <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+</div> -->
+
+<%- include('partials/footer_guest.ejs') %>

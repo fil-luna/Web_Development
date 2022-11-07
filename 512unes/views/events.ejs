@@ -1,0 +1,68 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+
+<div class="container">
+    <h1 class="row mt-5 justify-content-center" id="eventsPage">Click on below to see upcoming concerts in the Austin area!</h1>
+    <!-- Button was added to allow user to go to a list of events. -->
+    <form>
+        <button class="events btn-secondary" type="submit" action="/events" method="Get" name="city" value="austin">Austin
+            Shows</button>
+        <!-- <button class="events" type="submit" action="/events" method="Get" name="city" value="houston">Houston Shows</button> -->
+    </form>
+</div>
+
+<!-- Create container for our grid -->
+<div class="d-flex justify-content-evenly container text-center">
+    <!-- Check to see if we have data to display -->
+    <% if (data !==undefined) { %>
+        <div class="row">
+            <!-- using a forEach loop to iterate through the artist objects  and display in cards -->
+        <% data.forEach(el=> { %>
+                    <div class="col py-2">
+                        <div class="card border-dark" style="width: 18rem; object-fit: cover;" id="card">
+                            <img src="<%=el.images[0].url%>" class="card-img-top" alt="Card img cap">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%=el.name%>
+                                </h5>
+                                <p class="card-text text-center">
+                                    <%=el.name%>
+                                        <a href="<%=el.url%>">For more information or to purchase tickets</a>
+                                        <br>
+                                    Date: <%=el.dates.start.localDate %>
+                                </p>
+                                <!-- Create, adding data to database, a favorite -->
+                                <form action="/addFavorite" method="post">
+                                    <label>
+                                        Add to favorites
+                                        <button class="btn-danger" type="submit" name="faveEvent"
+                                            value="<%=JSON.stringify({image: el.images[0].url, event: el.name, url: el.url})%>">
+                                            Favorite
+                                        </button>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- Closes Col -->
+                    
+                    <% }) %>
+                    <!-- closes callback -->
+                    <% } %>
+                    <!-- Closes if for data -->
+                    
+                </div><!--  Closes row -->
+
+                <!-- the about page can have the website's mission and values. It can also include a Inquiry form at the bottom -->
+                </div>
+                <div class="container">
+                    <div class="row mt-5 justify-content-center">
+                    <div class="col-md-8 row mt-5 justify-content-center">
+                        <!-- Picture is used to add our Austinite culture -->
+            <img src="https://static2.gensler.com/uploads/hero_element/18679/thumb_desktop/thumbs/sports-University-of-Texas-at-Austin-Moody-Center_expertise_1500x750_1642725680_1500x750.jpg" alt="">
+            <!-- Next line works as a crutch to add space between the footer and the picture. -->
+            <img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="200" alt="">
+                    </div>
+                    </div>
+                </div>
+<%- include('partials/footer.ejs') %> 

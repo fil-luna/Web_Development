@@ -1,0 +1,145 @@
+<%- include('partials/header_guest.ejs') %>
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-8">
+      <div id="signupBGpic">
+        <!-- Included inside the form element: 
+          - Form validation
+          - First name requried to be entered
+          - Last name required to be entered
+          - Email required to be entered
+          - Password required to be entered
+          - Repeat password required to be entered
+              -->
+  <form action="/signup" method="post">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr />
+
+      <label for="fname"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" name="fname" required />
+
+      <label for="lname"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" name="lname" required />
+
+      <label for="username"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="username" required />
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required />
+
+      <label for="password2"><b>Repeat Password</b></label>
+      <input
+        type="password"
+        placeholder="Repeat Password"
+        name="password2"
+        required
+      />
+
+      <label id="remember">
+        <input
+          type="checkbox"
+          checked="checked"
+          name="remember"
+          style="margin-bottom: 15px"
+        />
+        Remember me
+      </label>
+      <!-- Makes sure user is over the age of 18 using radio buttons -->
+      <p>Are you over 18?</p>
+      <input type="radio" name="over18" value="yes">
+      <label for="yes">Yes</label><br>
+      <input type="radio" name="over18" value="no">
+      <label for="no">No</label><br>
+<!-- Allows user to select 3 options for their gener using a dropdown box. -->
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <p id="terms">
+        By creating an account you agree to our
+        <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
+      </p>
+      <div class="clearfix mt-3">
+        <button type="submit" class="signupbtn mr-1">Sign Up</button>
+        <!-- Cancel button did originally rediret user to the home page but due to updated code, users who are guests navigating to the home page will now by default go to the landing page. -->
+        <button onclick="homeRedirect()" type="button" class="cancelbtn">Cancel</button> 
+      </div>
+      </div>
+    </form>
+    <!-- Next 6 lines work as a crutch to add space between the sign up form and the footer. -->
+      <div class="container">
+        <div class="row mt-5 justify-content-center">
+        </div>
+        <div class="col-md-8">
+        </div>
+      </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- <div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-8">
+      <div id="signupBGpic">
+        <form action="/home">
+          <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr />
+      
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required />
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required />
+      
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input
+              type="password"
+              placeholder="Repeat Password"
+              name="psw-repeat"
+              required
+            />
+      
+            <label>
+              <input
+                type="checkbox"
+                checked="checked"
+                name="remember"
+                style="margin-bottom: 15px"
+              />
+              Remember me
+            </label>
+      
+            <p>
+              By creating an account you agree to our
+              <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
+            </p>
+      
+            <div class="clearfix mt-3">
+              <button type="submit" class="signupbtn mr-1">Sign Up</button>
+              <button type="button" class="cancelbtn">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<script>
+  function homeRedirect() {
+    location.replace("http://localhost:3000/landing_page")
+  }
+  </script>
+
+<%- include('partials/footer_guest.ejs') %>

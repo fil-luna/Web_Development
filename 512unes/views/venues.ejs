@@ -1,0 +1,58 @@
+<%- include('partials/header.ejs', {title: "Venues"}) %>
+<%- include('partials/navbar.ejs') %>
+<!-- Next 9 lines centers and shrinks the search field and submit button to an appropiate size. -->
+<div class="row mt-5 justify-content-center">
+	<div class="col-md-3 row mt-5 justify-content-center">
+		<h1 class="row mt-5 justify-content-center">Find Venues by City</h1>
+<form>
+	<input type="text" name="city" placeholder="Enter a city to search for venues and places...">
+	<button class="btn-danger" type="submit" formaction="/venues">Search</button>
+</form>
+</div>
+</div>
+
+<div class="d-flex justify-content-evenly container text-center">
+	<!-- Handling the case  there is no data -->
+	<% if (data !==undefined) { %>
+		<div class="row">
+			<!-- using a forEach loop to iterate through API data of venue and then display in bootstrap card -->
+			<% data.places.forEach(el=> { %>
+					
+				<div class="col py-2">
+					<div class="card card border-dark text-white bg-secondary mb-3" style="width: 18rem; border: 1px solid black;" id="card">
+						<div class="card-body">
+								<h3 class="card-title" style="text-align: center;"> <%=el.name%>
+							</h3>
+							<p class="card-text text-center" style="text-align: center;">
+								<%= el.type %> 
+                                <br>
+                                <%= el.address %> 
+                                <br>
+							</p>
+							<!-- adds venue to favorites page and to db favorites collection -->
+							<form action="/addFavePlace" method="post">
+								<label>
+									<button class="btn-danger" type="submit" name="favePlace"
+										value="<%=JSON.stringify({name: el.name, type: el.type, address: el.address, beenThere: el.beenThere})%>">
+										Favorite
+									</button>
+								</label>
+							</form>
+							<br>
+							
+						</div>
+					</div>
+				</div> <!-- Closes Col -->
+				<% }) %>
+		</div>
+		<% } %>
+</div>
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-8 row mt-5 justify-content-center">
+      <img src="https://traveler.marriott.com/wp-content/uploads/2022/02/downtown-nightlife-austin-texas.jpg" alt="">
+			<img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="100" alt="">
+    </div>
+  </div>
+</div>
+<%- include('partials/footer.ejs') %>

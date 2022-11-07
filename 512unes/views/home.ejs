@@ -1,0 +1,173 @@
+<%- include('partials/header.ejs', {title: "Home"}) %>
+<%- include('partials/navbar.ejs') %>
+
+<main>
+  <!-- Carousel begins. The purpose of the carousel is to promote events from the "Events" page to entice the user's interest. -->
+  <!-- The carousel was built from bootstrap and modified in the following ways:
+  - Clicking "Learn more" will the user to that specific event on the Events page.
+  - Background Images are linked from external sites.
+  - Text was modified to show the event name and date.
+  -->
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="carousel-styling" src="/assets/ACL.jpg" alt="">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+        
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <!-- Next 3 lines are not set in stone as they're redundant. Once data pulled from api, a random band will go here instead. -->
+            <h1>Austin City Limits Music Festival - Weekend Two.</h1>
+            <p>Date: 2022-10-14</p>
+            <p><a class="btn btn-lg btn-danger" href="http://localhost:3000/events?city=austin#:~:text=Favorite-,Austin%20City%20Limits%20Music%20Festival%20%2D%20Weekend%20Two,-Austin%20City%20Limits">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="carousel-styling" src="https://media.vsstatic.com/image/upload/t_performer_hero_image/hero/event/concerts/32414-the-1975/the-1975-tickets-1.jpg" alt="">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <!-- Next 3 lines are not set in stone as they're redundant. Once data pulled from api, a event will go here instead. -->
+            <h1>THE 1975 AT THEIR VERY BEST - NORTH AMERICA 2022</h1>
+            <p>Date: 2022-11-17</p>
+            <p><a class="btn btn-lg btn-danger" href="http://localhost:3000/events?city=austin#:~:text=Favorite-,THE%201975%20AT%20THEIR%20VERY%20BEST%20%2D%20NORTH%20AMERICA%202022,-THE%201975%20AT">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div id="carousel1" class="carousel-item">
+        <img class="carousel-styling" src="https://api.floodmagazine.com/wp-content/uploads/2014/12/blackkeys-121914-austin_cred-suzannecordeiro-960x540.jpg" alt="">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill=""/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <!-- This actually could stay here. Or we can put something like  -->
+            <h1>The Black Keys w/special guest Band of Horses-The Dropout Boogie Tour</h1>
+            <p>Date: 2022-10-17</p>
+            <p><a class="btn btn-lg btn-danger" href="http://localhost:3000/events?city=austin#:~:text=Favorite-,The%20Black%20Keys%20w/special%20guest%20Band%20of%20Horses%2DThe%20Dropout%20Boogie%20Tour,-The%20Black%20Keys">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!-- Carousel Ends -->
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+  <!-- Users who are less familiar with our web app will more likely choose to navigate to artists, events or venues somewhere in the middle of the page. -->
+  <div class="container marketing">
+    <!-- Three columns of text below the carousel -->
+    <div class="container marketing">
+      <i class="fa-solid fa-guitar-electric"></i>
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+          <i class="fa-solid fa-guitar-electric"></i>
+        <div class="col-lg-4">
+          <!-- Instead of pics, insert icons. For venues, look for a bar icon -->
+          <span style="font-size: 140px;" width="340" height="340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <i class="fa-solid fa-music"></i>
+          </span>
+          <!-- Artists link, same as Artists link from the header-->
+          <h2>Artists</h2>
+          <p>Check out bands and artists from each area of the city near you.</p>
+          <p><a class="btn btn btn-danger" href="/artists">Find Artists &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <i class="fa-solid fa-guitar-electric danger"></i>
+          <!-- Instead of pics, insert icons. For venues, look for a bar icon -->
+          <span class="danger" style="font-size: 140px;" width="340" height="340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <i class="fa-regular fa-calendar-days"></i>
+          </span>
+<!-- Events link, same as Events link from the header-->
+          <h2>Events</h2>
+          <p>Check out local events from each area of the city.</p>
+          <p><a class="btn btn btn-danger" href="/events">Find Events &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+  
+        <div class="col-lg-4">
+          <!-- Instead of pics, insert icons. For venues, look for a bar icon -->
+          <span style="font-size: 140px;" width="340" height="340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <i class="fa-solid fa-building"></i>
+          </span>
+<!-- Venues link, same as Venues link from the header-->
+          <h2>Venues</h2>
+          <p>Already a memeber? Check out the your favorited events!</p>
+          <p><a class="btn btn-danger" href="/venues">Find Venues &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+<!-- This adds material for the users who like to take their time to look through any websites before making any decisions. The news articles adds social proof to a degree and validates their interest in our webapp. -->
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">ACL ANNOUNCES SEASON 48 LINEUP</h2>
+        <ul class="lead">
+          <h3>Season 48 Broadcast Line-up (second half of season to be announced separately)</h3>
+          <li>October 1 Brandi Carlile</li>
+          <li>October 8 Japanese Breakfast/Arlo Parks</li>
+          <li>October 15 Sylvan Esso/Lucius</li>
+          <li>October 22 Allison Russell/The Weather Station</li>
+          <li>October 29 Parker McCollum/Robert Earl Keen</li>
+          <li>November 5 Lyle Lovett and His Large Band</li>
+          <li>November 12 Cimafunk and The Tribe</li>
+          </ul>
+      </div>
+      <div class="col-md-5">
+        <a href="https://acltv.com/2022/08/09/acl-announces-season-48-lineup/">
+        <img src="https://acltv.com/wp-content/uploads/2022/07/004_ACLBrandiCarlile071322_byScottNewton_DSC5207.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></text></a>
+      </div>
+    </div>
+<!-- Adds faint grey line -->
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">TODAY’S AUSTIN MUSIC SCENE<span class="text-muted"></span></h2>
+        <p class="lead">Today Austin continues to be a vibrant center for live music.  Its official motto is “The Live Music Capital of the World.”   Hundreds of live music venues dot the city and are particularly congregated on 6th Street.  There is even live music at the Austin-Bergstrom International Airport.</p>
+      </div>
+        <a href="https://austinrelocationguide.com/austins-music-scene/#:~:text=TODAY%E2%80%99S%20AUSTIN%20MUSIC%20SCENE"><img src="" alt="">
+          <div class="col-md-5 order-md-1">
+            <img src="https://32clo81gzk6g2kyvg2s047x1-wpengine.netdna-ssl.com/wp-content/uploads/sites/20/2012/10/art_guitars_austin_texas_by_Michael_Coghlan2.jpg" 
+        class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title><img src="" alt="">Placeholder</title><rect width="100%" height="100%"  fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></text></a>
+
+      </div>
+    </div>
+    <!-- Adds faint grey line -->
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Music History</h2>
+        <p class="lead"><a href="https://amateurtraveler.com/austin-festivals/#:~:text=Austin%20was%20founded%20in%201839%20with%20a%20strong%20Mexican%2C%20German%2C%20and%20Swedish%20presence.%20Those%20early%20settlers%20brought%20their%20music%20with%20them.%20It%20included%20polkas%2C%20waltzes%2C%20lullabies%2C%20and%20opera.%20They%20played%20guitar%2C%20piano%2C%20accordions%2C%20and%20harmonicas%2C%20creating%20a%20wide%20variety%20of%20music%20in%20the%20city."> A story</a> about how Austin was founded in 1839 with a strong Mexican, German, and Swedish presence. Those early settlers brought their music with them. It included polkas, waltzes, lullabies, and opera. They played guitar, piano, accordions, and harmonicas, creating a wide variety of music in the city.</p>
+      </div>
+      <div class="col-md-5">
+        <a href="https://amateurtraveler.com/austin-festivals/#:~:text=Austin%20was%20founded%20in%201839%20with%20a%20strong%20Mexican%2C%20German%2C%20and%20Swedish%20presence.%20Those%20early%20settlers%20brought%20their%20music%20with%20them.%20It%20included%20polkas%2C%20waltzes%2C%20lullabies%2C%20and%20opera.%20They%20played%20guitar%2C%20piano%2C%20accordions%2C%20and%20harmonicas%2C%20creating%20a%20wide%20variety%20of%20music%20in%20the%20city.">
+        <img src="https://npr.brightspotcdn.com/dims4/default/bb907e3/2147483647/strip/true/crop/325x500+0+0/resize/1760x2708!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fkut%2Ffiles%2F201609%2Fwilliedilloposter.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></text></img></a>
+      </div>
+    </div>
+    <!-- Adds faint grey line between footer and news articles -->
+    <hr class="featurette-divider" style="color:aliceblue">
+    <!-- /END THE FEATURETTES -->
+  </div><!-- /.container -->
+</main>
+<script src="../client"></script>
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,69 @@
+<%- include('partials/header.ejs', {title: "Search Artists"}) %>
+<%- include('partials/navbar.ejs') %>
+<!-- Next 9 lines centers and shrinks the search  field and submit button to an appropiate size. -->
+<div class="row mt-5 justify-content-center">
+	<div class="col-md-3 row mt-5 justify-content-center">
+		<h1 class="row mt-5 justify-content-center">Find Artists by City</h1>
+<form class="artists-search">
+	<input type="text" name="city" placeholder="Enter a city to search for artists...">
+	<button class="btn-danger" type="submit" formaction="/artists">Search</button>
+</form>
+</div>
+</div>
+
+<!-- <div class="d-flex justify-content-evenly container text-center"> -->
+	<div class="container">
+		<div class="row mt-5 justify-content-center">
+			<div class="col-md-8 row mt-5 justify-content-center">
+	<!-- Handling the case where the page loads and there is no data -->
+	<% if (data !==undefined) { %>
+		<div class="row">
+			<!-- using a forEach loop to iterate through the artist objects  and display in cards -->
+			<% data.artists.forEach(el=> { %>
+				<div class="col py-2">
+					<div class="card card border-dark text-white bg-secondary mb-3" style="width: 18rem; border: 1px solid black;" id="card">
+						<div class="card-body">
+								<h3 class="card-title" style="text-align: center;"> <%=el.name%>
+							</h3>
+							<p class="card-text text-center" style="text-align: center;">
+								Artist type: <%= el.type %> 
+							</p>
+							<!-- Adding a favorite, this is a post -->
+							<form action="/addFaveArtist" method="post">
+								<label>
+									<button class="btn-danger" type="submit" name="faveArtist"
+										value="<%=JSON.stringify({artist: el.name, type: el.type})%>">
+										Favorite
+									</button>
+								</label>
+							</form>
+						</div>
+					</div>
+				</div> <!-- Closes Col -->
+				<% }) %>
+		</div>
+		<% } %>
+</div>
+
+
+
+      
+    </div>
+  </div>
+</div>
+<!-- the about page can have the website's mission and values. It can also include a Inquiry form at the bottom -->
+</div>
+
+<div class="container">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-md-8 row mt-5 justify-content-center">
+			<!-- Picture was added to showcase Austin culture. Legend has it, he/she who finds this guitar and wields it is worthy to summon the greatest rock show ever. -->
+      <img src="https://practicalwanderlust.com/wp-content/uploads/2020/03/Austin-Texas-Street-Art.jpg" alt="">
+			<!-- Next line works as a crutch to add space between the footer and the mystical guitar -->
+			<img src="https://wallpaperaccess.com/full/1556608.jpg" width="100" height="100" alt="">
+    </div>
+  </div>
+</div>
+<!-- the about page can have the website's mission and values. It can also include a Inquiry form at the bottom -->
+</div>
+<%- include('partials/footer.ejs') %>
